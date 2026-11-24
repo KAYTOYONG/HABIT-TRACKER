@@ -1,0 +1,739 @@
+<style>
+/* Scope these theme overrides to the section hosting this page. */
+.shopify-section:has(#tyh-habit-dashboard),
+.page-width:has(> .rte #tyh-habit-dashboard) {
+    background: #fff;
+}
+
+.shopify-section:has(#tyh-habit-dashboard) :is(h1.main-page-title, h1.page-title),
+.page-width:has(> .rte #tyh-habit-dashboard) > h1 {
+    display: none;
+}
+
+#tyh-habit-dashboard {
+    --tyh-styles: 1;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1180px, calc(100vw - 40px));
+    max-width: none;
+    margin: 0;
+    background: #fff;
+    color: #111;
+    font: 16px/1.5 Inter, Arial, sans-serif;
+    letter-spacing: normal;
+}
+@media (max-width: 767px) {
+    #tyh-habit-dashboard { width: calc(100vw - 32px); }
+}
+
+#tyh-habit-dashboard .gallery-tech-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+
+    box-sizing: border-box;
+}
+
+#tyh-habit-dashboard .main-stage-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+}
+
+#tyh-habit-dashboard .main-stage-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+}
+
+#tyh-habit-dashboard .thumbs-row-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+}
+
+#tyh-habit-dashboard .thumb {
+    aspect-ratio: 1/1;
+
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+#tyh-habit-dashboard .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+#tyh-habit-dashboard .thumb:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+#tyh-habit-dashboard .thumb.active {
+    opacity: 1;
+    border: 3px solid #00E676;
+}
+
+@media (max-width: 768px) {
+    #tyh-habit-dashboard .thumbs-row-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+#tyh-habit-dashboard .premium-header {
+    margin-bottom: 0px;
+    font-family: 'Inter', sans-serif;
+}
+
+#tyh-habit-dashboard .header-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+#tyh-habit-dashboard .version-pill {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #00C853;
+    background: #DCFCE7;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+#tyh-habit-dashboard .status-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #00C853;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(0, 200, 83, 0.2);
+}
+
+#tyh-habit-dashboard .hero-title {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #111111;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+@media (min-width: 768px) {
+    #tyh-habit-dashboard .hero-title {
+        font-size: 38px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #tyh-habit-dashboard .hero-title {
+        font-size: 42px;
+    }
+}
+
+#tyh-habit-dashboard .soft-pricing {
+    margin-bottom: 0px;
+    font-family: 'Inter', sans-serif;
+}
+
+#tyh-habit-dashboard .sp-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#tyh-habit-dashboard .sp-price {
+    font-size: 40px;
+    font-weight: 800;
+    color: #111;
+    letter-spacing: -1.5px;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+#tyh-habit-dashboard .sp-details {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#tyh-habit-dashboard .sp-strike {
+    font-size: 15px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+#tyh-habit-dashboard .sp-note {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: #00C853;
+    font-weight: 600;
+    background: #F0FDF4;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+#tyh-habit-dashboard .sp-icon {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+#tyh-habit-dashboard .cta-glow {
+    width: 100%;
+    margin-top: 0px;
+    filter: drop-shadow(0 4px 6px rgba(0, 200, 83, 0.4));
+}
+
+#tyh-habit-dashboard .btn-tech {
+    width: 100%;
+    background: linear-gradient(135deg, #00C853 0%, #009624 100%);
+    border: 1px solid #4ade80;
+    border-radius: 12px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#tyh-habit-dashboard .btn-tech:hover {
+    transform: scale(1.02);
+}
+
+#tyh-habit-dashboard .btn-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+#tyh-habit-dashboard .btn-label {
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+#tyh-habit-dashboard .btn-divider {
+    opacity: 0.5;
+    font-weight: 300;
+}
+
+#tyh-habit-dashboard .btn-info {
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 1;
+}
+
+#tyh-habit-dashboard .dl-icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: white;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+#tyh-habit-dashboard .quote-box-regret {
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 24px;
+    font-family: 'Inter', sans-serif;
+
+
+    border-left: 3px solid #E5E7EB;
+    padding-left: 16px;
+}
+
+#tyh-habit-dashboard .regret-text {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+
+#tyh-habit-dashboard .regret-text strong {
+    color: #111;
+    font-weight: 700;
+
+    text-decoration: underline;
+    text-decoration-color: #00C853;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 3px;
+}
+
+#tyh-habit-dashboard .choice-tag {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    font-weight: 600;
+}
+
+#tyh-habit-dashboard .inline-reels-section {
+    --tyh-reels-width: var(--tyh-viewport-width, 100vw);
+    background: #FFFFFF;
+    padding: 60px 0;
+    font-family: 'Inter', sans-serif;
+    width: var(--tyh-reels-width);
+    max-width: none;
+    margin-inline: calc((100% - var(--tyh-reels-width)) / 2);
+    overflow: hidden;
+}
+
+#tyh-habit-dashboard .reels-header-centered {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+#tyh-habit-dashboard .soft-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #F3F4F6;
+    color: #4B5563;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 100px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+#tyh-habit-dashboard .dot-live {
+    width: 6px;
+    height: 6px;
+    background: #00C853;
+    border-radius: 50%;
+}
+
+#tyh-habit-dashboard .reels-main-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #111;
+    margin: 0 0 8px 0;
+    letter-spacing: -1px;
+}
+
+#tyh-habit-dashboard .reels-sub-text {
+    font-size: 15px;
+    color: #666;
+    margin: 0;
+}
+
+#tyh-habit-dashboard .inline-track {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 0 20px;
+    padding-bottom: 30px;
+
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: auto;
+    user-select: none;
+}
+#tyh-habit-dashboard.is-interactive .inline-track { cursor: grab; }
+#tyh-habit-dashboard .inline-track::-webkit-scrollbar { display: none; }
+#tyh-habit-dashboard .inline-track.is-dragging { scroll-snap-type: none; }
+#tyh-habit-dashboard .inline-track.is-dragging, #tyh-habit-dashboard .inline-track.is-dragging * { cursor: grabbing; }
+
+#tyh-habit-dashboard .inline-card {
+    flex: 0 0 auto;
+    width: 260px;
+    height: 460px;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #000;
+    scroll-snap-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    border: 1px solid #eee;
+}
+
+#tyh-habit-dashboard .inline-card:hover {
+    transform: translateY(-4px);
+}
+
+#tyh-habit-dashboard .card-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 1;
+}
+
+#tyh-habit-dashboard .play-layer {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.1);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+#tyh-habit-dashboard .play-circle-btn {
+    width: 56px;
+    height: 56px;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.2s, background 0.2s;
+}
+
+#tyh-habit-dashboard .play-circle-btn { color: #007c36; font-size: 24px; padding-left: 3px; }
+
+#tyh-habit-dashboard .inline-card:hover .play-circle-btn {
+    transform: scale(1.1);
+    background: #FFFFFF;
+}
+
+#tyh-habit-dashboard .reels-footer {
+    text-align: center;
+    margin-top: 10px;
+    padding: 0 20px;
+}
+
+#tyh-habit-dashboard .bottom-cta-btn {
+    background-color: #00C853;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3);
+    transition: transform 0.2s, background 0.2s;
+    width: 100%;
+    max-width: 400px;
+}
+
+#tyh-habit-dashboard .bottom-cta-btn:hover {
+    transform: translateY(-2px);
+    background-color: #009624;
+}
+
+#tyh-habit-dashboard .cta-guarantee {
+    font-size: 12px;
+    color: #888;
+    margin-top: 12px;
+    font-weight: 500;
+}
+
+@media (max-width: 600px) {
+    #tyh-habit-dashboard .inline-card {
+        width: 75vw;
+        height: auto;
+        aspect-ratio: 9 / 16;
+    }
+    #tyh-habit-dashboard .reels-main-title { font-size: 26px; }
+}
+
+#tyh-habit-dashboard * { box-sizing: border-box; }
+
+#tyh-habit-dashboard button { font: inherit; }
+#tyh-habit-dashboard .hero { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 32px; width: min(100%, 1180px); margin: auto; padding: 40px 0; }
+#tyh-habit-dashboard .product-details { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+#tyh-habit-dashboard .benefits { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+
+#tyh-habit-dashboard .thumb { border: 3px solid transparent; padding: 0; background: transparent; border-radius: 10px; }
+#tyh-habit-dashboard .thumb:focus-visible, #tyh-habit-dashboard .play-layer:focus-visible, #tyh-habit-dashboard a:focus-visible { outline: 3px solid #007c36; outline-offset: 3px; }
+#tyh-habit-dashboard .btn-tech, #tyh-habit-dashboard .bottom-cta-btn { text-decoration: none; }
+#tyh-habit-dashboard .bottom-cta-btn { display: inline-block; }
+#tyh-habit-dashboard .dl-icon { flex: 0 0 20px; }
+#tyh-habit-dashboard .play-layer { border: 0; padding: 0; }
+#tyh-habit-dashboard .video-error { position: absolute; inset: auto 12px 12px; color: #fff; background: #111; text-align: center; margin: 0; padding: 8px; border-radius: 8px; }
+@media (max-width: 767px) {
+    #tyh-habit-dashboard .hero { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 24px 0; }
+    #tyh-habit-dashboard .product-details { gap: 16px; }
+    #tyh-habit-dashboard .gallery-tech-container { padding: 0; }
+    #tyh-habit-dashboard .quote-box-regret { margin-top: 12px; margin-bottom: 0; }
+    #tyh-habit-dashboard .btn-tech { padding-inline: 16px; }
+}
+
+#tyh-habit-dashboard .play-layer[hidden] { display: none; }
+#tyh-habit-dashboard .thumb, #tyh-habit-dashboard .main-stage-container img { margin: 0; }
+#tyh-habit-dashboard .main-stage-container img, #tyh-habit-dashboard .thumb img { border: 0; box-shadow: none; }
+#tyh-habit-dashboard .btn-tech, #tyh-habit-dashboard .bottom-cta-btn { color: #fff; }
+#tyh-habit-dashboard .btn-tech:after, #tyh-habit-dashboard .bottom-cta-btn:after { content: none; }
+</style>
+
+<div id="tyh-habit-dashboard" lang="en" dir="ltr">
+    <section class="hero" aria-label="Habit Tracker &amp; Life Dashboard">
+        <div class="gallery-tech-container">
+            <div class="main-stage-container">
+                <img class="gallery-main-image" src="https://lh3.googleusercontent.com/d/1ItTWbwJSj_RUjHtE78zINHrita-QEZeC=w1080" alt="Habit Tracker Dashboard" width="1080" height="1080" referrerpolicy="no-referrer">
+            </div>
+
+            <div class="thumbs-row-container">
+                <a class="thumb active" href="https://lh3.googleusercontent.com/d/1ItTWbwJSj_RUjHtE78zINHrita-QEZeC=w1080" target="_blank" rel="noopener noreferrer">
+                    <img src="https://lh3.googleusercontent.com/d/1ItTWbwJSj_RUjHtE78zINHrita-QEZeC=w1080" alt="Habit Tracker Dashboard, view 1" width="1080" height="1080" referrerpolicy="no-referrer">
+                </a>
+                <a class="thumb" href="https://lh3.googleusercontent.com/d/1lWZlZrDxN55r4qfb0r7eF0dbh7vpKRHq=w1080" target="_blank" rel="noopener noreferrer">
+                    <img src="https://lh3.googleusercontent.com/d/1lWZlZrDxN55r4qfb0r7eF0dbh7vpKRHq=w1080" alt="Habit Tracker Dashboard, view 2" width="1080" height="1080" referrerpolicy="no-referrer">
+                </a>
+                <a class="thumb" href="https://lh3.googleusercontent.com/d/1ohvA4ErM5CzNNUz3F9-pHxXplIemEobF=w1080" target="_blank" rel="noopener noreferrer">
+                    <img src="https://lh3.googleusercontent.com/d/1ohvA4ErM5CzNNUz3F9-pHxXplIemEobF=w1080" alt="Habit Tracker Dashboard, view 3" width="1080" height="1080" referrerpolicy="no-referrer">
+                </a>
+            </div>
+        </div>
+        <div class="product-details">
+            <div class="premium-header">
+                <div class="header-top">
+                    <span class="version-pill">ULTIMATE 2026</span>
+                    <span class="status-dot"></span>
+                </div>
+
+                <h1 class="hero-title">
+                    HABIT TRACKER &amp; LIFE DASHBOARD [Google Sheets + Excel]
+                </h1>
+            </div>
+            <div class="soft-pricing">
+                <div class="sp-wrapper">
+                    <span class="sp-price">$9.99</span>
+                    <div class="sp-details">
+                        <span class="sp-strike">$27.00</span>
+                        <span class="sp-note">
+                            <svg viewBox="0 0 24 24" class="sp-icon"><path fill="currentColor" d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m14-7l-5 5-5-5m5 5V3"/></svg>
+                            Instant Download
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <ul class="benefits">
+                <li>🎯 Unlock focus, discipline, and success</li>
+                <li>⚡️ Instant: Download and start in 2 minutes.</li>
+                <li>📱 Any Device: Works on Mac, PC, &amp; Mobile.</li>
+            </ul>
+            <div class="cta-glow">
+                <a href="https://whop.com/checkout/plan_0qewt3jskxV9O/?session=chs_AQAjxTEEHxglGS" class="btn-tech">
+                    <span class="btn-content">
+                        <span class="btn-label">Buy Now</span>
+                        <span class="btn-divider">|</span>
+                        <span class="btn-info">Instant Download</span>
+                    </span>
+                    <svg class="dl-icon" viewBox="0 0 24 24">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m14-7l-5 5-5-5m5 5V3"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="quote-box-regret">
+                <p class="regret-text">
+                    6 months from now, you can either have a dashboard full of completed habits...
+                    <br><strong>or you can be exactly where you are today.</strong>
+                </p>
+                <div class="choice-tag">The choice is yours.</div>
+            </div>
+        </div>
+    </section>
+    <section class="inline-reels-section">
+
+        <div class="reels-header-centered">
+            <div class="soft-badge">
+                <span class="dot-live"></span> SYSTEM DEMO
+            </div>
+            <h2 class="reels-main-title">Watch the System in Action</h2>
+            <p class="reels-sub-text">Tap any video to explore the dashboard features.</p>
+        </div>
+
+        <div class="inline-track" tabindex="0" role="region" aria-label="Dashboard demo videos">
+
+            <div class="inline-card">
+                <video class="card-video" aria-label="Dashboard demo 1" playsinline preload="metadata" controls src="https://cdn.shopify.com/videos/c/o/v/dae4406d6621467e9b519f267963e458.mp4"></video>
+                <button type="button" class="play-layer" hidden aria-label="Play demo 1">
+                    <span class="play-circle-btn" aria-hidden="true">&#9654;</span>
+                </button>
+            </div>
+
+            <div class="inline-card">
+                <video class="card-video" aria-label="Dashboard demo 2" playsinline preload="metadata" controls src="https://cdn.shopify.com/videos/c/o/v/68c2cc7616334853baab6ea7f9d68230.mp4"></video>
+                <button type="button" class="play-layer" hidden aria-label="Play demo 2">
+                    <span class="play-circle-btn" aria-hidden="true">&#9654;</span>
+                </button>
+            </div>
+
+            <div class="inline-card">
+                <video class="card-video" aria-label="Dashboard demo 3" playsinline preload="metadata" controls src="https://cdn.shopify.com/videos/c/o/v/2b29a3d9368a4b64bf5e7b8189a826f4.mp4"></video>
+                <button type="button" class="play-layer" hidden aria-label="Play demo 3">
+                    <span class="play-circle-btn" aria-hidden="true">&#9654;</span>
+                </button>
+            </div>
+
+            <div class="inline-card">
+                <video class="card-video" aria-label="Dashboard demo 4" playsinline preload="metadata" controls src="https://cdn.shopify.com/videos/c/o/v/76192fa0306f4d58b04fc73ba0eaaacd.mp4"></video>
+                <button type="button" class="play-layer" hidden aria-label="Play demo 4">
+                    <span class="play-circle-btn" aria-hidden="true">&#9654;</span>
+                </button>
+            </div>
+            <div class="inline-card">
+                <video class="card-video" aria-label="Dashboard demo 5" playsinline preload="metadata" controls src="https://cdn.shopify.com/videos/c/o/v/b082590e4c7a42ddbadd274337db79a1.mp4"></video>
+                <button type="button" class="play-layer" hidden aria-label="Play demo 5">
+                    <span class="play-circle-btn" aria-hidden="true">&#9654;</span>
+                </button>
+            </div>
+
+            <div class="inline-card">
+                <video class="card-video" aria-label="Dashboard demo 6" playsinline preload="metadata" controls src="https://cdn.shopify.com/videos/c/o/v/fa0ff467b524450ba171f846c1ac7eec.mp4"></video>
+                <button type="button" class="play-layer" hidden aria-label="Play demo 6">
+                    <span class="play-circle-btn" aria-hidden="true">&#9654;</span>
+                </button>
+            </div>
+
+        </div>
+
+        <div class="reels-footer">
+            <a href="https://whop.com/checkout/plan_0qewt3jskxV9O/?session=chs_AQAjxTEEHxglGS" class="bottom-cta-btn">
+                Get Instant Access - $9.99
+            </a>
+
+            <p class="cta-guarantee">🔒 Lifetime Access • One-time payment</p>
+        </div>
+
+    </section>
+</div>
+
+<script>
+(() => {
+    const page = document.getElementById('tyh-habit-dashboard');
+    if (!page || page.classList.contains('is-interactive')) return;
+
+    const mainImage = page.querySelector('.gallery-main-image');
+    const thumbs = [...page.querySelectorAll('.thumb')];
+    if (mainImage) {
+        for (const thumb of thumbs) {
+            if (thumb.classList.contains('active')) thumb.setAttribute('aria-current', 'true');
+            thumb.addEventListener('click', event => {
+                if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+                const selected = thumb.querySelector('img');
+                if (!selected) return;
+                event.preventDefault();
+                mainImage.src = thumb.href;
+                mainImage.alt = selected.alt;
+                for (const item of thumbs) {
+                    item.classList.toggle('active', item === thumb);
+                    if (item === thumb) item.setAttribute('aria-current', 'true');
+                    else item.removeAttribute('aria-current');
+                }
+            });
+        }
+    }
+
+    const track = page.querySelector('.inline-track');
+    if (track) {
+        function updateViewportWidth() {
+            page.style.setProperty('--tyh-viewport-width', document.documentElement.clientWidth + 'px');
+        }
+
+        updateViewportWidth();
+        window.addEventListener('resize', updateViewportWidth);
+
+        let drag;
+        track.addEventListener('pointerdown', event => {
+            if (event.pointerType !== 'mouse' || event.button !== 0 ||
+                event.target.closest('video[controls]') ||
+                track.scrollWidth <= track.clientWidth) return;
+            drag = { id: event.pointerId, x: event.clientX, scroll: track.scrollLeft };
+        });
+
+        track.addEventListener('pointermove', event => {
+            if (event.pointerId !== drag?.id) return;
+            const offset = drag.x - event.clientX;
+            if (!track.hasPointerCapture(event.pointerId)) {
+                if (Math.abs(offset) < 6) return;
+                track.setPointerCapture(event.pointerId);
+                track.classList.add('is-dragging');
+            }
+            track.scrollLeft = drag.scroll + offset;
+        });
+
+        function stopDrag(event) {
+            if (event.pointerId !== drag?.id) return;
+            drag = undefined;
+            track.classList.remove('is-dragging');
+        }
+
+        window.addEventListener('pointerup', stopDrag);
+        window.addEventListener('pointercancel', stopDrag);
+        track.addEventListener('lostpointercapture', stopDrag);
+    }
+
+    // Keep native controls if the page editor removes the custom styles or play buttons.
+    const customStylesLoaded = getComputedStyle(page).getPropertyValue('--tyh-styles').trim() === '1';
+    const videos = [...page.querySelectorAll('.card-video')];
+    for (const video of videos) {
+        video.addEventListener('play', () => {
+            for (const other of videos) {
+                if (other !== video) other.pause();
+            }
+        });
+        const card = video.closest('.inline-card');
+        const overlay = card?.querySelector('.play-layer');
+        if (!customStylesLoaded || !overlay) continue;
+
+        overlay.hidden = false;
+        video.controls = false;
+        overlay.addEventListener('click', async () => {
+            try {
+                await video.play();
+                card.querySelector('.video-error')?.remove();
+            } catch {
+                if (card.querySelector('.video-error')) return;
+                const message = document.createElement('p');
+                message.className = 'video-error';
+                message.setAttribute('role', 'status');
+                message.textContent = 'Video unavailable. Please try again.';
+                card.append(message);
+            }
+        });
+        video.addEventListener('play', () => {
+            overlay.hidden = true;
+            video.controls = true;
+        });
+        video.addEventListener('ended', () => {
+            overlay.hidden = false;
+            video.controls = false;
+        });
+    }
+    page.classList.add('is-interactive');
+})();
+</script>
